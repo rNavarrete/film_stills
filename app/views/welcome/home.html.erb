@@ -1,0 +1,11 @@
+<ul class="albums">
+  <li ng-repeat="movie in movies" class="album" ng-style="{ background : movie.colors.background }">
+    <div class="container">
+      <img ng-src="{{ movie.cover }}" class="cover" />
+      <div class="infos">
+        <h1 class="name" ng-style="{ color : movie.colors.content[ 0 ] }"> {{ movie.title }}</h1>
+      </div>
+    </div>
+  </li>
+</ul>
+

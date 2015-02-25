@@ -1,0 +1,6 @@
+<%= simple_form_for(@movie_poster, url: movie_posters_path) do |f| %>
+  <%= f.text_field :title, :id => 'title', placeholder: "Title" %> 
+  <%= f.label :poster_image, "Attach an Image" %>
+  <%= f.file_field :poster_image %>
+  <%= f.submit "Save Poster", class: "btn btn-success" %>
+<% end %>
