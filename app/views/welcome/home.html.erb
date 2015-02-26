@@ -1,9 +1,6 @@
-
 <% if current_user %>
-  <h1> "Hello #{current_user.name}"</h1>
+  <h1><%= current_user.first_name %></h1>
 <% else %>
-  <%= simple_form_for @user, new_session_path do |f| %>
-    <%= f.input :email, id: "email" %>
-    <%= f.input :password, id: "password" %>
-    <%= f.button :submit %>
+  <h1> "Please sign in" <%= session.inspect %></h1>
 <% end %>
+

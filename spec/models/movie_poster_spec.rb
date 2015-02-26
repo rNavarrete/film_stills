@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe MoviePoster, :type => :model do
+RSpec.describe Movie, :type => :model do
   
 end
