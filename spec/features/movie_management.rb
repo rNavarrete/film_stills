@@ -14,7 +14,8 @@ feature "Movie Managment" do
     user = User.create(first_name: "Rolando",last_name: "Navarrete", email: "rolando.e.navarrete@gmail.com", password_digest: "godfather")
 
     login_as(user)
-    visit "/my_films"
+    click_on "My Movies" 
+
     within("#films_1") do
       click_link "edit"
     end

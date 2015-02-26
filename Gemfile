@@ -29,7 +29,7 @@ gem 'figaro'
 gem 'aws-sdk', '< 2.0'
 gem 'responders', '~> 2.0'
 gem 'rack-cors', :require => 'rack/cors'
-
+gem 'bcrypt', '~> 3.1.7'
 
 group :development do
   gem "spring"
