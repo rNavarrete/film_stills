@@ -10,7 +10,6 @@ feature "User management" do
     fill_in "user_first_name", with: "rolando"
     fill_in "user_last_name", with: "navarrete"
     click_on "Create User"
-    save_and_open_page
     expect(page).to have_content("rolando")
   end
 end

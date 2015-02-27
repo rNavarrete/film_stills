@@ -14,10 +14,9 @@ end
 module Helpers
   def login_as(user)
     visit "/"
-    page.fill_in('email', with: user.email)
-    page.fill_in('password', with: '1234')
-    save_and_open_page
-    page.click_button('Sign in')
+    page.fill_in('Email', with: user.email)
+    page.fill_in('Password', with: user.password)
+    page.click_button('Sign In')
   end
 end
 
