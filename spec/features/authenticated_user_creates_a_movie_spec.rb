@@ -1,7 +1,7 @@
 require "rails_helper"
 
-feature "Movie Managment" do
-  scenario "User creates a new movie" do
+feature "Authenticated user creates a new movie" do
+  scenario "user logs in and sees the movie title on the page" do
     user = User.create(first_name: "Rolando",last_name: "Navarrete", email: "rolando.e.navarrete@gmail.com", password: "godfather", username: "archshot")
     login_as(user)
     click_on "Add a Movie"

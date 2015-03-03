@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "welcome#home"
+  root "movies#index"
   resources :movies
   resources :sessions, only: [:create, :new, :destroy]
   get "/signup" => "users#new"

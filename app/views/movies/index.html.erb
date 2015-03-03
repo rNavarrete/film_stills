@@ -1,1 +1,18 @@
 <h1>"This is the index page".</h1>
+
+<% if current_user %>
+  <h1><%= current_user.first_name %></h1>
+<% else %>
+  <%= form_tag("/sessions", method: "post") do %>
+    <%= label_tag(:email, "Email:") %>
+    <%= text_field_tag(:email) %>
+    <%= label_tag(:password, "Password:") %>
+    <%= password_field_tag(:password) %>
+    <%= submit_tag("Sign In") %>
+  <% end %>
+<% end %>
+
+
+
+
+

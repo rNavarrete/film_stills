@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe User, :type => :model do
   let(:user) do
-    user = User.create(first_name: "Rolando", last_name: "Navarrete", email: "wu-tang-kid@gmail.com", password_digest: "ghostface")
+    User.create(first_name: "Rolando", last_name: "Navarrete", email: "wu-tang-kid@gmail.com", password: "godfather")
   end
-  
+
   let(:invalid_user) do
-    invalid_user = User.create(first_name: nil, last_name: nil, email: nil, password_digest: nil)
+    User.create(first_name: nil, last_name: nil, email: nil, password_digest: nil)
   end
 
   it "is valid" do
@@ -18,9 +18,10 @@ RSpec.describe User, :type => :model do
   end
 
   it "can use bcrypt to authenticate a user password" do
-    params[:password] = "ghostface"
-    valid_user = user.authenticate(params[:password])
+    params = {}
+    params[:password] = "godfather"
+    authenticated_user = user.authenticate(params[:password])
 
-    
+    expect(authenticated_user).to be_valid
   end
 end
