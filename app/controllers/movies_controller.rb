@@ -9,9 +9,9 @@ class MoviesController < ApplicationController
   end
 
   def create
-    @movie = Movie.new(movie_params)
-    if @movie_poster.save
-      redirect_to movie_path(@movie_poster)
+    movie = Movie.new(movie_params)
+    if movie.save
+      redirect_to movie_path(movie)
     else
       redirect_to root_page
     end

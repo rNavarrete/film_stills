@@ -16,4 +16,11 @@ RSpec.describe User, :type => :model do
   it "isn't valid" do
     expect(invalid_user).to_not be_valid
   end
+
+  it "can use bcrypt to authenticate a user password" do
+    params[:password] = "ghostface"
+    valid_user = user.authenticate(params[:password])
+
+    
+  end
 end
