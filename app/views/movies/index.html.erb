@@ -1,5 +1,10 @@
 <h1>"This is the index page".</h1>
 
+<% @movies.each do |movie| %>
+  <%= movie.title %>
+  <%= image_tag movie.poster_image(:medium) %>
+<% end %>
+
 <% if current_user %>
   <h1><%= current_user.first_name %></h1>
 <% else %>
