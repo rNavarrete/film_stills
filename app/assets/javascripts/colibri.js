@@ -145,6 +145,7 @@ var Colibri = ( function ( ) {
     };
 
     var extractImageColors = function ( image, filter ) {
+
         var canvas = createCanvas( );
         var context = canvas.getContext( '2d' );
 
@@ -152,7 +153,7 @@ var Colibri = ( function ( ) {
         canvas.height = image.height;
 
         context.drawImage( image, 0, 0, canvas.width, canvas.height );
-        console.log("we in here");
+
         var borderImageData = [ ];
         loadDataFromContext( borderImageData, context, 0, 0, canvas.width - 1, 1 );
         loadDataFromContext( borderImageData, context, canvas.width - 1, 0, 1, canvas.height - 1 );

@@ -5,4 +5,10 @@ Rails.application.routes.draw do
   get "/signup" => "users#new"
   post "/users" => "users#create"
   get "/user_dashboard" => "pages#user_dashboard"
+
+  namespace :api do
+    namespace :v1 do
+      resources :movies
+    end
+  end
 end
