@@ -1,5 +1,3 @@
-<h1>"This is the index page".</h1>
-
 <% @movies.each do |movie| %>
   <%= movie.title %>
   <%= image_tag movie.poster_image(:medium) %>
