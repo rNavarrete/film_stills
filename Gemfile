@@ -30,6 +30,8 @@ gem 'aws-sdk', '< 2.0'
 gem 'responders', '~> 2.0'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'bcrypt', '~> 3.1.7'
+gem 'angular-rails-templates'
+gem 'bower-rails'
 
 group :development do
   gem "spring"
@@ -57,5 +59,3 @@ group :test do
   gem "webmock"
 end
 
-group :staging, :production do
-end
