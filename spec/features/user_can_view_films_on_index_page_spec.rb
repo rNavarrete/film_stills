@@ -4,7 +4,6 @@ RSpec.describe "user can view all films on index page" do
   scenario "unauthenticated user views all images on the home page" do
     create_four_films
     visit "/"
-    save_and_open_page
     expect(page).to have_content("Full Metal Jacket")
     expect(page).to have_content("Barry Lyndon")
     expect(page).to have_content("The Shining")
