@@ -1,25 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe User, :type => :model do
-  let(:user) do
-    User.create(first_name: "Rolando", last_name: "Navarrete", email: "wu-tang-kid@gmail.com", password: "godfather")
-  end
 
-  let(:invalid_user) do
-    User.create(first_name: nil, last_name: nil, email: nil, password_digest: nil)
-  end
-
-  it "is valid" do
+  it "is valid with all necessary attributes" do
+    user = FactoryGirl.create(:user)
     expect(user).to be_valid
   end
 
-  it "isn't valid" do
+  it "isn't valid without a first name" do
+    invalid_user = FactoryGirl.build(:user, first_name: nil)
     expect(invalid_user).to_not be_valid
   end
 
   it "can use bcrypt to authenticate a user password" do
+    user = FactoryGirl.create(:user)
     params = {}
-    params[:password] = "godfather"
+    params[:password] = "brando"
     authenticated_user = user.authenticate(params[:password])
 
     expect(authenticated_user).to be_valid

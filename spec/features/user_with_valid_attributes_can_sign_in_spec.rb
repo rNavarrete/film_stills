@@ -1,13 +1,12 @@
 require "rails_helper"
 
-feature "authenticated user" do
-  scenario "should not see login fields" do
+RSpec.describe "user can log in successfully", :type => :feature do
+  it "when he logs in with valid attributes" do
     user = FactoryGirl.create(:user)
     visit "/"
     page.fill_in('Email', with: user.email)
     page.fill_in('Password', with: user.password)
     page.click_button('Sign In')
-    visit "/"
-    expect(page).to_not have_content("Password")
+    expect(page).to have_content("Welcome to your dashboard Navarrete")
   end
 end
