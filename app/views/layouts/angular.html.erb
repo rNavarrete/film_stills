@@ -1,0 +1,18 @@
+
+<ul class="albums">
+            <li ng-repeat="album in albums" class="album" ng-style="{ background : album.colors.background }">
+                <div class="container">
+                    <img ng-src="{{ album.cover }}" class="cover" />
+                    <div class="infos">
+                        <h1 class="name" ng-style="{ color : album.colors.content[ 0 ] }">
+                            {{ album.name }}
+                        </h1>
+                        <ol class="tracks" ng-style="{ color : album.colors.content[ 1 ] }">
+                            <li ng-repeat="track in album.tracks" class="track">
+                                <span class="index" ng-style="{ color : album.colors.content[ 0 ] }">{{ $index }}.</span> {{ track }}
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </li>
+        </ul>

@@ -1,4 +1,4 @@
-class API::V1::MoviesController < ApplicationController
+class Api::V1::MoviesController < ApplicationController
   respond_to :json
 
   def index
