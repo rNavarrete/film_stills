@@ -132,6 +132,9 @@ GEM
       slop (~> 3.5)
       term-ansicolor
       terminal-table
+    jbuilder (1.5.3)
+      activesupport (>= 3.0.0)
+      multi_json (>= 1.2.0)
     jquery-rails (4.0.3)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -301,6 +304,7 @@ DEPENDENCIES
   formulaic
   high_voltage
   i18n-tasks
+  jbuilder (~> 1.2)
   jquery-rails
   launchy
   neat (~> 1.7.0)
