@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Movie, type: :model do
   let(:valid_movie) do
     file_path = File.open("#{Rails.root}/app/assets/images/pulp.jpg")
-    Movie.create(title: "Back to the Future", poster_image: file_path, movie_id: "back_to_the_future", director: "Steven Spielberg")
+    Movie.create(title: "Back to the Future", poster_image: file_path, movie_id: "back_to_the_future", director: "Steven Spielberg", release_date: "June 22, 1966")
   end
 
   let(:movie_without_title) do
