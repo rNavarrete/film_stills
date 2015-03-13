@@ -15,10 +15,10 @@ module Helpers
   
   def create_four_films
     file_path = File.open("/#{Rails.root}/app/assets/images/pulp.jpg")
-    Movie.create(title: "Full Metal Jacket", poster_image: file_path)
-    Movie.create(title: "Barry Lyndon", poster_image: file_path)
-    Movie.create(title: "The Shining", poster_image: file_path)
-    Movie.create(title: "A Clockwork Orange", poster_image: file_path)
+    Movie.create(title: "Full Metal Jacket", poster_image: file_path, director: "Stanley Kubrick", movie_id: "full_metal_jacket")
+    Movie.create(title: "Barry Lyndon", poster_image: file_path, director: "Stanley Kubrick", movie_id: "barry_lyndon")
+    Movie.create(title: "The Shining", poster_image: file_path, director: "Stanley Kubrick", movie_id: "the_shining")
+    Movie.create(title: "A Clockwork Orange", poster_image: file_path, director: "Stanley Kubrick", movie_id: "a_clock_work_orange")
   end
 end
 
