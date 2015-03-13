@@ -4,6 +4,7 @@
   <%= f.text_field :director, :id => "director", placeholder: "Director" %> 
   <%= f.label :poster_image, "Attach an Image" %>
   <%= f.text_field :release_date, :id => "Release date", placeholder: "When was this film released?" %>
+  <%= f.text_field :imdb_url, :id => "Imdb url", placeholder: "ex. http://www.imdb.com/title/tt0050986/" %>
   <%= f.file_field :poster_image, id: "Poster image" %>
   <%= f.submit "Save Movie", class: "btn btn-success" %>
 <% end %>
