@@ -19,8 +19,8 @@ def last(counter)
     @last_truth == 3
     true
   elsif @last_truth + 4 == @counter
-    true
     @last_counter = @counter
+    true
   else
     false
   end
