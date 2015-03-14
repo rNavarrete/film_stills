@@ -19,7 +19,7 @@ def last(counter)
   if counter == 3
     @last_truth == 3
     true
-  elsif @last_truth + 4 == @counter
+  elsif @last_truth + 3 == @counter
     @last_counter = @counter
     true
   else
