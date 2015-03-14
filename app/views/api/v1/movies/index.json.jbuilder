@@ -20,6 +20,7 @@ def last(counter)
     true
   elsif @last_truth + 4 == @counter
     true
+    @last_counter = @counter
   else
     false
   end
