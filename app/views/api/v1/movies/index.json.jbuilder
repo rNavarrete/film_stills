@@ -8,6 +8,7 @@ def first(counter)
   if counter == 0
     true
   elsif counter % 4 == 0
+    @last_truth = counter
     true
   else
     false
