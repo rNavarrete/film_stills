@@ -15,12 +15,15 @@ def first(counter)
   end
 end
 
-def last(counter)
+def last(counter, movie)
   if counter == 3
     @last_truth == 3
     true
   elsif @last_truth + 3 == @counter
     @last_counter = @counter
+    true
+  elsif
+    Movie.all.last == movie
     true
   else
     false
@@ -38,7 +41,7 @@ json.movies @movies do |movie|
   json.release_date movie.release_date
   json.movie_id movie.movie_id
   json.first first(@counter)
-  json.last last(@counter)
+  json.last last(@counter, movie)
   @counter += 1
 end
 
