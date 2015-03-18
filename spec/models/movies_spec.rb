@@ -26,9 +26,11 @@ RSpec.describe Movie, type: :model do
     Movie.create(title: "Back to the Future",movie_id: "back_to_the_future", poster_image: file_path, director: nil)
   end
 
- it "isn't valid without a title" do
-   expect(movie_without_title).to_not be_valid
- end
+  it {should belong_to(:user)}
+
+  it "isn't valid without a title" do
+    expect(movie_without_title).to_not be_valid
+  end
 
   it "isn't valid without a poster image" do
     expect(movie_without_poster_image).to_not be_valid

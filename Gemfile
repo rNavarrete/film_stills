@@ -53,7 +53,7 @@ group :test do
   gem "database_cleaner"
   gem "formulaic"
   gem "launchy"
-  gem "shoulda-matchers", require: false
+  gem "shoulda-matchers"
   gem "timecop"
   gem "webmock"
 end

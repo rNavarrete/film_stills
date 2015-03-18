@@ -1,4 +1,5 @@
 class Movie < ActiveRecord::Base
+  belongs_to :user
   before_validation :make_movie_id
 
   has_attached_file :poster_image, :styles => { :medium => "300x300>" }, :default_url => "/images/:style/missing.png"
