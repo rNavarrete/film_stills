@@ -12,7 +12,19 @@ module Features
 end
 
 module Helpers
-  
+  def user_login
+    user = FactoryGirl.create(:user)
+    visit "/"
+    page.fill_in('Email', with: user.email)
+    page.fill_in('Password', with: user.password)
+    page.click_button('Sign In')
+  end
+
+  def user_creates_film(user)
+    file_path = File.open("/#{Rails.root}/app/assets/images/bttf_test.jpg")
+    Movie.create(title: "Back to the Future", poster_image: file_path, director: "Robert Zemekis", movie_id: "back_to_the_future")
+  end
+
   def create_four_films
     file_path = File.open("/#{Rails.root}/app/assets/images/pulp.jpg")
     Movie.create(title: "Full Metal Jacket", poster_image: file_path, director: "Stanley Kubrick", movie_id: "full_metal_jacket")
