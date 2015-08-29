@@ -3,33 +3,42 @@ require 'rails_helper'
 RSpec.describe Movie, type: :model do
   let(:valid_movie) do
     file_path = File.open("#{Rails.root}/app/assets/images/pulp.jpg")
-    Movie.create(title: "Back to the Future", poster_image: file_path, movie_id: "back_to_the_future", director: "Steven Spielberg", release_date: "June 22, 1966")
+    Movie.create(title: "Back to the Future", poster_image: file_path, movie_id: "back_to_the_future", director: "Steven Spielberg", release_date: "June 22, 1966", user_id: 1)
   end
 
   let(:movie_without_title) do
     file_path = File.open("#{Rails.root}/app/assets/images/pulp.jpg")
-    Movie.create(title: nil, poster_image: file_path, movie_id: "back_to_the_future", director: "Steven Spielberg")
+    Movie.create(title: nil, poster_image: file_path, movie_id: "back_to_the_future", director: "Steven Spielberg", user_id: 1)
   end
 
 
   let(:movie_without_movie_id) do
     file_path = File.open("#{Rails.root}/app/assets/images/pulp.jpg")
-    Movie.create(title: "Back to the future", poster_image: file_path, movie_id: nil, director: "Steven Spielberg")
+    Movie.create(title: "Back to the future", poster_image: file_path, movie_id: nil, director: "Steven Spielberg", user_id: 1)
   end
 
   let(:movie_without_poster_image) do
-    Movie.create(title: "Back to the Future", movie_id: "back_to_the_future", poster_image: nil, director: "Steven Spielberg")
+    Movie.create(title: "Back to the Future", movie_id: "back_to_the_future", poster_image: nil, director: "Steven Spielberg", user_id: 1)
   end
 
   let(:movie_without_a_director) do
     file_path = File.open("#{Rails.root}/app/assets/images/pulp.jpg")
-    Movie.create(title: "Back to the Future",movie_id: "back_to_the_future", poster_image: file_path, director: nil)
+    Movie.create(title: "Back to the Future",movie_id: "back_to_the_future", poster_image: file_path, director: nil, user_id: 1)
+  end
+
+  let(:movie_without_user_id) do
+    file_path = File.open("#{Rails.root}/app/assets/images/pulp.jpg")
+    Movie.create(title: "Back to the Future",movie_id: "back_to_the_future", poster_image: file_path, director: nil, user_id: nil)
   end
 
   it {should belong_to(:user)}
 
   it "isn't valid without a title" do
     expect(movie_without_title).to_not be_valid
+  end
+
+  it "isn't valid without a user id" do
+    expect(movie_without_user_id).to_not be_valid
   end
 
   it "isn't valid without a poster image" do

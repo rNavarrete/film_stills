@@ -3,7 +3,6 @@ require "prime"
 @counter = 0
 @last_truth = 0
 
-
 def first(counter)
   if counter == 0
     true
@@ -30,18 +29,18 @@ def last(counter, movie)
   end
 end
 
-
-
-json.movies @movies do |movie|
-  json.title movie.title
-  json.poster movie.poster_image(:medium)
-  json.imdb_url movie.imdb_url
-  json.director movie.director
-  json.cast movie.cast
-  json.release_date movie.release_date
-  json.movie_id movie.movie_id
-  json.first first(@counter)
-  json.last last(@counter, movie)
-  @counter += 1
+@movies.each do |array_of_four|
+  json.movies array_of_four do |movie|
+    json.title movie.title
+    json.poster movie.poster_image(:medium)
+    json.imdb_url movie.imdb_url
+    json.director movie.director
+    json.cast movie.cast
+    json.release_date movie.release_date
+    json.movie_id movie.movie_id
+    json.first first(@counter)
+    json.last last(@counter, movie)
+    @counter += 1
+  end
 end
 
