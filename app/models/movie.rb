@@ -21,16 +21,24 @@ class Movie < ActiveRecord::Base
   def by_arrays_of_four
     complete_films_array = []
     counter = 0
-    movie_array = []
-    Movie.all.map do |movie|
-      if counter == 4
+    movie_set = []
+    Movie.each do |movie|
+      if movie == movies.last
+        movie_set << movie
+        complete_films_array << Array.new(movie_set)
+      break
+      elsif counter == 0
+        movie_set << movie
+        counter += 1
+      elsif counter == 3
+        moive_set << movie
+        complete_films_array << Array.new(movie_set)
         counter = 0
-        complete_films_array << movie_array
-        movie_array.clear
-      elsif counter < 4
-        arr << movie
+        movie_set.clear
+      else
+        movie_set << movie
         counter += 1
       end
     end
-  end
+    complete_films_array
 end
