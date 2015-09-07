@@ -40,5 +40,5 @@ class Movie < ActiveRecord::Base
         counter += 1
       end
     end
-    complete_films_array
+  end
 end
