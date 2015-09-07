@@ -8,9 +8,6 @@
     json.cast movie.cast
     json.release_date movie.release_date
     json.movie_id movie.movie_id
-    json.first first(@counter)
-    json.last last(@counter, movie)
-    @counter += 1
   end
 end
 
